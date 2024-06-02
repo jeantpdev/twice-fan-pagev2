@@ -1,0 +1,42 @@
+---
+import ImageEffect from "./ImageEffect.astro";
+
+const { name, releaseDate, coverArt, id } = Astro.props;
+---
+
+<div class="album">
+  <div class="album-cover">
+    <ImageEffect
+      carpeta="infoAlbums",
+      id={id},
+      coverArt={coverArt},
+      altDescripcion={name},
+      nombreAlbum={name}
+      width= "400px"
+      height= "400px"
+    />
+  </div>
+
+  <div class="album-titulo">
+    <a href={`/infoAlbums/${id}`}>{name}</a>
+  </div>
+
+  <div class="album-fecha">
+    <p>{releaseDate}</p>
+  </div>
+</div>
+
+<style>
+  .album {
+    text-align: center;
+  }
+
+  .album-titulo a {
+    font-weight: bold;
+    color: var(--negro);
+  }
+
+  .album-fecha p {
+    color: var(--gris);
+  }
+</style>

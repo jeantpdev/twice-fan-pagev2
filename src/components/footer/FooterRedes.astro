@@ -1,0 +1,23 @@
+---
+const { color = "text-white" } = Astro.props;
+const currentPage = Astro.url.pathname
+
+import redes from '@/data/redes.json';
+
+const keys = Object.keys(redes)
+---
+
+<div class={`flex fixed flex-col align-bottom gap-y-3 justify-end items-center mx-10 mb-5 bottom-1 ${currentPage === "/" ? "flex" : "hidden sm:flex"}`}>
+    {keys.map((key) => {
+        const [url, icon] = redes[key];
+        return (
+        <a aria-label={`Visitar el perfil de ${key} de Lilac Dreamers`} target="_blank" href={url}>
+            <i class={`${color} text-2xl fa-brands ${icon}`}></i>
+        </a>
+        );
+      })
+    }
+</div>
+
+ <script src = "https://kit.fontawesome.com/1a5bcd4a97.js" crossorigin="anonymous" is:inline data-astro-rerun></script>
+

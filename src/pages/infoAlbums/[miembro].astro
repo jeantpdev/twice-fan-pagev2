@@ -1,0 +1,104 @@
+---
+
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import miembros from "../../data/members.json";
+import ReturnButton from "../../components/ReturnButton.astro";
+
+export async function getStaticPaths() {
+  return miembros.map((miembro) => ({
+    params: {
+      miembro: miembro.nickname
+    },
+    props: {
+      miembros: miembro
+    },
+  }));
+}
+const { name, nickname, born, name_korea, image } = Astro.props.miembros
+
+---
+
+<BaseLayout title="Miembros" textColor='text-black' bgColor='bg-white'>
+
+  <div class="central">
+    <div class="boton-retroceder">
+      <ReturnButton pagina = "miembros"/>
+    </div>
+    <div class="contenido-central">
+
+      <div class="idol">
+        <div class="idol-info">
+          <h1 class="name">{name}</h1>
+          <div class="linea-negra"></div>
+          <p class="nickname">{nickname}</p>
+          <p class="born">{born}</p>
+          <p class="name-korea">{name_korea}</p>
+        </div>
+
+        <div class="idol-img">
+          <img src={image} alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  body {
+    color: black;
+  }
+
+  .boton-retroceder{
+    margin-left: 60px;
+  }
+  
+  .linea-negra {
+    border-bottom: 3px solid black;
+    width: 300px;
+  }
+
+  .idol {
+    display: flex;
+    width: 1300px;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  img {
+    height: 700px;
+    object-fit: cover;
+    max-width: 400px;
+    mask-image: linear-gradient(black 80%, transparent);
+  }
+
+  .central {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .contenido-central {
+    display: flex;
+    width: 80vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .central .contenido-central h1 {
+    font-size: 4em;
+    color: var(--negro);
+  }
+
+  .idol-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+  }
+
+  .idol-info p{
+    font-size: 2em;
+    font-weight: 500;
+  }
+  
+</style>

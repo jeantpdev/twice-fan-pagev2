@@ -1,0 +1,101 @@
+[
+    {
+      "id":"01" ,
+       "name":"Im Nayeon",
+       "nickname":"Nayeon",
+       "born":"1995-09-22",
+       "bloodType":"A",
+       "image":"/img/members/nayeon.png",
+       "img": "/img/members-img/nayeon.jpg",
+       "instagram":"https://www.instagram.com/nayeonyny/",
+       "name_korea": "나연"
+    },
+    {
+      "id":"02" ,
+       "name":"Yoo Jeongyeon",
+       "nickname":"Jeongyeon",
+       "born":"1996-11-01",
+       "bloodType":"O",
+       "image":"/img/members/jeongyeon.png",
+       "img": "/img/members-img/jeongyeon.jpg",
+       "instagram":"https://www.instagram.com/jy_piece/",
+       "name_korea": "정연"
+    },
+    {
+      "id":"03" ,
+       "name":"Momo Hirai",
+       "nickname":"Momo",
+       "born":"1996-11-09",
+       "bloodType":"A",
+       "image":"/img/members/momo.png",
+       "img": "/img/members-img/momo.jpg",
+       "instagram":"https://www.instagram.com/momo/",
+       "name_korea": "모모"
+    },
+    {
+      "id":"04" ,
+       "name":"Sana Minatozaki",
+       "nickname":"Sana",
+       "born":"1996-12-29",
+       "bloodType":"B",
+       "image":"/img/members/sana.png",
+       "img": "/img/members-img/sana.jpg",
+       "instagram":"https://www.instagram.com/m.by__sana/",
+       "name_korea": "사나"
+    },
+    {
+      "id":"05" ,
+       "name":"Park Jihyo",
+       "nickname":"Jihyo",
+       "born":"1997-02-01",
+       "bloodType":"O",
+       "image":"/img/members/jihyo.png",
+       "img": "/img/members-img/jihyo.jpg",
+       "instagram":"https://www.instagram.com/_zyozyo/",
+       "name_korea": "지효"
+    },
+    {
+      "id":"06" ,
+       "name":"Mina Sharon Myoi",
+       "nickname":"Mina",
+       "born":"1997-03-24",
+       "bloodType":"A",
+       "image":"/img/members/mina.png",
+       "img": "/img/members-img/mina.jpg",
+       "instagram":"https://www.instagram.com/mina_sr_my/",
+       "name_korea": "미나"
+    },
+    {
+      "id":"07" ,
+       "name":"Kim Dahyun",
+       "nickname":"Dahyun",
+       "born":"1998-05-28",
+       "bloodType":"O",
+       "image":"/img/members/dahyun.png",
+       "img": "/img/members-img/dahyun.jpg",
+       "instagram":"https://www.instagram.com/dahhyunnee/",
+       "name_korea": "다현"
+    },
+    {
+      "id":"08" ,
+       "name":"Son Chaeyoung",
+       "nickname":"Chaeyoung",
+       "born":"1999-04-23",
+       "bloodType":"B",
+       "image":"/img/members/chaeyoung.png",
+       "img": "/img/members-img/chaeyoung.jpg",
+       "instagram":"https://www.instagram.com/chaeyo.0/",
+       "name_korea": "채영"
+    },
+    {
+      "id":"09" ,
+       "name":"Chou Tzuyu",
+       "nickname":"Tzuyu",
+       "born":"1999-06-14",
+       "bloodType":"A",
+       "image":"/img/members/tzuyu.png",
+       "img": "/img/members-img/tzuyu.jpg",
+       "instagram":"https://www.instagram.com/thinkaboutzu/",
+       "name_korea": "쯔위"
+    }
+ ]

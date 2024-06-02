@@ -1,0 +1,154 @@
+---
+import Hamburger from "../components/Hamburger.astro";
+import TopNavigation from "../components/TopNavigation.astro";
+
+import "@fontsource-variable/noto-sans";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="contenedor-video">
+        <video autoplay loop src="/img/video-twice-one-spark.webm"></video>
+      </div>
+
+      <div class="contenedor-overlay"></div>
+
+        <div class="contenedor-contenido">
+          
+          <div class="menu-arriba">
+            <Hamburger />
+            <TopNavigation/>
+          </div>
+
+          <slot />
+
+          <div class="menu-izquierda">
+            <div class="contenido-izquierda">
+              <div class="izquierda-texto">
+                <p>TWICE</p>
+              </div>
+              <div class="enlaces-izquierda">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <a href="https://github.com/jeantpdev" target="_blank"
+                  ><i class="fa-brands fa-github"></i></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <script
+      src="https://kit.fontawesome.com/1a5bcd4a97.js"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<style>
+  body {
+    overflow: hidden;
+    font-family: "Noto Sans Variable", sans-serif;
+    line-height: 1.6;
+  }
+
+  .contenedor {
+    height: 100vh;
+    display: flex;
+    color: #fff;
+  }
+
+  .contenedor-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .contenedor-video video {
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .contenedor-overlay {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #191919;
+    z-index: 1;
+    opacity: 0.4;
+  }
+
+  .contenedor-contenido {
+    width: 100vw;
+    z-index: 2;
+    display: grid;
+    grid-template-areas:
+      "menu-izquierda menu-arriba"
+      "menu-izquierda contenido-central"
+      "menu-izquierda contenido-central";
+      grid-template-columns: auto 90vw;
+      grid-template-rows: 10vh auto;
+    padding: 50px;
+  }
+
+  .menu-arriba {
+    grid-area: menu-arriba;
+  }
+
+  .menu-izquierda {
+    display: flex;
+    grid-area: menu-izquierda;
+  }
+
+
+  .menu-izquierda .contenido-izquierda {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .izquierda-texto p {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  .enlaces-izquierda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+  }
+
+  .enlaces-izquierda a {
+    color: var(--blanco);
+    font-size: 1em;
+  }
+
+  .menu-izquierda .contenido-izquierda i {
+    font-size: 1.5em;
+  }
+</style>

@@ -1,0 +1,151 @@
+---
+const { name, type, releaseDate, country, spotifyLink, coverArt, content, tracks } = Astro.props
+---
+
+<div class="album">
+    <div class="album-titulo">
+      <h1 class="album__titulo">{name}</h1>
+    </div>
+  
+    <div class="album-tipo">
+      <p class="album__tipo"><i class="fa-solid fa-record-vinyl"></i> {type}</p>
+    </div>
+  
+    <div class="album-fecha">
+      <p class="album__fecha"><i class="fa-solid fa-calendar-days"></i> {releaseDate}</p>
+    </div>
+  
+    <div class="album-pais">
+      <p class="album__pais"><i class="fa-solid fa-globe"></i> {country}</p>
+    </div>
+    
+    <div class="album-spotify">
+      <a class="boton boton-verde" href={spotifyLink}><i class="fa-brands fa-spotify"></i> Spotify <i class="fa-solid fa-square-up-right"></i></a>
+    </div>
+  
+    <div class="album-cover">
+      <img
+        src={coverArt}
+        alt={name}
+        class="album__cover"
+      />
+    </div>
+  <!-- album__track  -->
+    <div class="album-contenido">
+      <p class="album__contenido">{content}</p>
+    </div>
+    <div class="tracks-titulo">
+      <h3 class="titulo">Tracklist</h3>
+    </div>
+    <ol class="album-tracks">
+      {tracks.map((track) => (
+          <li class ="album__track">{track}</li>
+      ))}	  
+      
+    </ol>
+    
+  
+  </div>
+
+  <style>
+
+.album {
+    padding: 2vw;
+    display: grid;
+    grid-template-areas:
+        "cover titulo titulo"
+        "cover tipo tracks-titulo"
+        "cover releaseDate tracks"
+        "cover country tracks"
+        "cover album-spotify tracks"
+        "content content content";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 8vh 4vh 4vh 4vh;
+    gap: 30px;
+    width: 1200px;
+}
+
+.album-spotify{
+    grid-area: album-spotify;
+}
+
+.album-spotify a{
+    color: var(--blanco)
+}
+
+.album-titulo {
+    grid-area: titulo;
+}
+
+.album__titulo {
+    font-size: 2em;
+}
+
+.tracks-titulo {
+    grid-area: tracks-titulo;
+}
+
+.album-tipo {
+    grid-area: tipo;
+}
+
+.album-releaseDate {
+    grid-area: releaseDate;
+}
+
+.album-country {
+    grid-area: country;
+}
+
+.album__tipo,
+.album__fecha,
+.album__pais,
+.album__spotify{
+    font-size: 1.2em;
+}
+
+.album-cover {
+    display: grid;
+    grid-area: cover;
+    justify-content: center;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
+}
+
+.album__cover {
+    height: 400px;
+    max-width: 400px;
+}
+
+.album-contenido {
+    grid-area: content;
+}
+
+.album__contenido {
+    font-size: 1.2em;
+}
+
+.album-tracks {
+    grid-area: tracks;
+    height: 200px;
+    overflow-y: auto;
+}
+
+.tracks-titulo .titulo {
+    font-size: 1.2em;
+}
+
+.album__track {
+    font-size: 1.1em;
+}
+
+.album-tracks::-webkit-scrollbar {
+    height: 50px;
+    width: 5px;
+    background-color: #f0c478;
+}
+
+.album-tracks::-webkit-scrollbar-thumb {
+    background-color: #191919;
+}
+
+  </style>

@@ -1,0 +1,19 @@
+---
+const {pagina} = Astro.props
+---
+
+<div class="boton-retroceder">
+  <a href={`/${pagina}`}><i class="fa-solid fa-arrow-left"></i></a>
+</div>
+
+<style>
+  .boton-retroceder {
+    padding: 10px 0px;
+  }
+
+  .boton-retroceder a {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: var(--negro);
+  }
+</style>

@@ -1,0 +1,56 @@
+---
+import discografia from "../../data/discography.json";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Album from "../../components/Album.astro";
+import ReturnButton from "../../components/ReturnButton.astro";
+
+export async function getStaticPaths() {
+  return discografia.map((album) => ({
+    params: {
+      id: album.id,
+    },
+    props: {
+      album: album,
+    },
+  }));
+}
+
+const {
+  name,
+  type,
+  releaseDate,
+  country,
+  spotifyLink,
+  coverArt,
+  content,
+  tracks,
+} = Astro.props.album;
+---
+
+<BaseLayout title={name}>
+  <div class="central">
+    <div class="contenido-central">
+      <ReturnButton pagina = "discografia"/>
+
+      <Album
+        name={name}
+        type={type}
+        releaseDate={releaseDate}
+        country={country}
+        spotifyLink={spotifyLink}
+        coverArt={coverArt}
+        content={content}
+        tracks={tracks}
+      />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .contenido-central {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+</style>

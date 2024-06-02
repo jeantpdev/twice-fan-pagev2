@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets';
+
+const { carpeta, id, coverArt, altDescripcion, nombreAlbum, width, height } = Astro.props;
+
+console.log(width)
+
+---
+
+<div class="imagen-zoom">
+  <div class="efecto">
+    <a href={`/${carpeta}/${id}`}><Image src={coverArt} alt={altDescripcion} width= {width} height= {height}/></a>
+    <div class="caption">
+    <a href={`/${carpeta}/${id}`}>
+        <div class="blur"></div>
+        <div class="caption-text">
+          <h1>{nombreAlbum}</h1>
+        </div>
+    </a>
+
+    </div>
+  </div>
+</div>
+
+<style define:vars={{width, height}}>
+
+
+  .imagen-zoom .efecto {
+    float: left;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .imagen-zoom .efecto:hover .caption {
+    opacity: 1;
+  }
+
+  .imagen-zoom .efecto:hover img {
+    opacity: 1;
+    transform: scale(1.15, 1.15);
+    -webkit-transform: scale(1.15, 1.15);
+    -moz-transform: scale(1.15, 1.15);
+    -ms-transform: scale(1.15, 1.15);
+    -o-transform: scale(1.15, 1.15);
+  }
+
+  .imagen-zoom img {
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    z-index: 0;
+  }
+
+  .imagen-zoom .caption {
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: all 0.45s ease-in-out;
+    -moz-transition: all 0.45s ease-in-out;
+    -o-transition: all 0.45s ease-in-out;
+    -ms-transition: all 0.45s ease-in-out;
+    transition: all 0.45s ease-in-out;
+  }
+
+  .imagen-zoom img {
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+  }
+  .imagen-zoom .blur {
+    background-color: rgba(0, 0, 0, 0.65);
+    height: var(--height);
+    width: var(--width);
+    z-index: 5;
+    position: absolute;
+  }
+
+  .imagen-zoom .caption-text h1 {
+    text-transform: uppercase;
+    font-size: 24px;
+  }
+  .imagen-zoom .caption-text {
+    display: flex;
+    z-index: 10;
+    color: #fff;
+    position: absolute;
+    height: var(--height);
+    width: var(--width);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+</style>

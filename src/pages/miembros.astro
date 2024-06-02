@@ -1,0 +1,26 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import miembros from "@/data/members.json";
+---
+
+<BaseLayout title="Miembros" textColor='text-black' bgColor='bg-white'>
+
+    <div class="my-5 text-center">
+        <h1 class="text-5xl md:text-7xl font-bold">MIEMBROS</h1>
+    </div>
+            <div class="space-y-5 md:grid md:grid-cols-2 lg:grid-cols-3 justify-center gap-2 my-10">
+                {miembros.map((miembro) => {
+                    return(
+                        <div class="flex flex-col justify-center items-center space-y-2 content-center">
+                            <a class="font-bold text-3xl" href = {`/infoAlbums/${miembro.nickname}`}>{miembro.nickname}</a>
+                            <a href = {`/infoAlbums/${miembro.nickname}`}>
+                                <img src={miembro.img} class="h-56 w-56 object-cover" alt=""/>
+                            </a>
+                        </div>
+                    );
+                })
+                }
+            </div>
+        </div>
+
+</BaseLayout>
