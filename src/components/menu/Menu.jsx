@@ -34,9 +34,9 @@ export default function Menu({color}) {
 
                     </div>
                     <div className='flex absolute flex-col align-bottom gap-y-3 justify-end items-center mx-10 mb-8 bottom-1'>
-                           <a target="_blank" href="https://www.instagram.com/lilacdreamerss/"><i className="fa-brands fa-instagram text-2xl animate-fade-up animate-once"></i></a>
-                           <a target="_blank" href="https://www.youtube.com/@lilacdreamers"><i className="fa-brands fa-youtube text-2xl animate-fade-up animate-once"></i></a>
-                           <a target="_blank" href="#"><i className="fa-brands fa-x-twitter text-2xl animate-fade-up animate-once"></i></a>
+                           <a target="_blank" href="https://www.youtube.com/c/twice"><i className="fa-brands fa-youtube text-2xl animate-fade-up animate-once"></i></a>
+                           <a target="_blank" href="https://www.instagram.com/twicetagram"><i className="fa-brands fa-instagram text-2xl animate-fade-up animate-once"></i></a>
+                           <a target="_blank" href="https://x.com/JYPETWICE"><i className="fa-brands fa-x-twitter text-2xl animate-fade-up animate-once"></i></a>
                            <a target="_blank" href="https://github.com/jeantpdev"><i className="fa-brands fa-github text-2xl animate-fade-up animate-once"></i></a>
                     </div>
                 </div>

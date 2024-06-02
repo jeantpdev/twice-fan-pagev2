@@ -1,6 +1,6 @@
 {
-    "youtube": ["https://www.youtube.com/@lilacdreamers", "fa-youtube"],
-    "instagram": ["https://www.youtube.com/@lilacdreamers", "fa-instagram"],
-    "github": ["https://www.youtube.com/@lilacdreamers", "fa-github"],
-    "twitter": ["https://www.youtube.com/@lilacdreamers", "fa-x-twitter"]
+    "youtube": ["https://www.youtube.com/c/twice", "fa-youtube"],
+    "instagram": ["https://www.instagram.com/twicetagram", "fa-instagram"],
+    "twitter": ["https://x.com/JYPETWICE", "fa-x-twitter"],
+    "github": ["https://github.com/jeantpdev", "fa-github"]
 }
