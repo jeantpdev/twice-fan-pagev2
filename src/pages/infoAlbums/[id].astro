@@ -28,8 +28,7 @@ const {
 ---
 
 <BaseLayout title={name}>
-  <div class="central">
-    <div class="contenido-central">
+    <div class="grid justify-center">
       <ReturnButton pagina = "discografia"/>
 
       <Album
@@ -43,14 +42,4 @@ const {
         tracks={tracks}
       />
     </div>
-  </div>
 </BaseLayout>
-
-<style>
-  .contenido-central {
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-  }
-
-</style>

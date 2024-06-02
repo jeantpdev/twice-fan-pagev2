@@ -4,7 +4,7 @@ import ImageEffect from "./ImageEffect.astro";
 const { name, releaseDate, coverArt, id } = Astro.props;
 ---
 
-<div class="album">
+<div class="flex flex-col justify-center items-center">
   <div class="album-cover">
     <ImageEffect
       carpeta="infoAlbums",
@@ -17,26 +17,11 @@ const { name, releaseDate, coverArt, id } = Astro.props;
     />
   </div>
 
-  <div class="album-titulo">
-    <a href={`/infoAlbums/${id}`}>{name}</a>
+  <div>
+    <a href={`/infoAlbums/${id}`} class="font-semibold">{name}</a>
   </div>
 
   <div class="album-fecha">
     <p>{releaseDate}</p>
   </div>
 </div>
-
-<style>
-  .album {
-    text-align: center;
-  }
-
-  .album-titulo a {
-    font-weight: bold;
-    color: var(--negro);
-  }
-
-  .album-fecha p {
-    color: var(--gris);
-  }
-</style>
