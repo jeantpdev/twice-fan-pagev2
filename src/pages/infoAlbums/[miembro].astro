@@ -1,5 +1,4 @@
 ---
-
 import BaseLayoutMember from "@/layouts/BaseLayoutMembers.astro";
 import miembros from "@/data/members.json";
 import ReturnButton from "@/components/ReturnButton.astro";
@@ -14,31 +13,40 @@ export async function getStaticPaths() {
     },
   }));
 }
-const { name, nickname, born, name_korea, image } = Astro.props.miembros
-
-console.log(name)
-
+const { name, nickname, born, name_korea, image } = Astro.props.miembros;
 ---
 
 <BaseLayoutMember title="Miembros" textColor='text-black'>
 
-  <div class="central">
+  <div class="space-y-10">
     <ReturnButton pagina = "miembros"/>
-    <div class="contenido-central">
+    <div class="max-w-6xl mx-auto">
 
-      <div class="flex flex-col lg:flex-row justify-center">
-        <div class="">
-          <h1 class="text-4xl font-semibold">{name}</h1>
-          <div class="w-20 md:w-36 lg:w-40 bg-zinc-900 h-1"></div>
-          <p class="text-xl">{nickname}</p>
-          <p class="born">{born}</p>
-          <p class="name-korea">{name_korea}</p>
+      <div class="flex flex-col lg:grid lg:grid-cols-2 lg:justify-center">
+        
+        <div class="space-y-2">
+          <h1 class="text-7xl font-semibold">{name}</h1>
+          <div class="w-20 md:w-36 lg:w-72 bg-zinc-900 h-1"></div>
+
+          <div>
+            <p class="text-2xl">{nickname}</p>
+            <p class="text-2xl">{born}</p>
+            <p class="text-2xl">{name_korea}</p>
+          </div>
+
         </div>
 
-        <div class="idol-img">
-          <img src={image} class="lg:w-[700px]" alt="" />
+        <div class="grid justify-center">
+          <img src={image} class="lg:h-[700px] lg:w-[500px] object-contain" alt="" />
         </div>
+
       </div>
     </div>
   </div>
 </BaseLayoutMember>
+
+<style>
+    img {
+    mask-image: linear-gradient(black 80%, transparent);
+  }
+</style>
