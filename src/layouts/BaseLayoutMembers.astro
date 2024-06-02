@@ -1,14 +1,16 @@
 ---
 import "@fontsource-variable/noto-sans";
-import "../styles/global.css";
 import { ViewTransitions } from 'astro:transitions';
-import ContentLayout from "@/layouts/ContentLayout.astro";
-
+import Menu from '@/components/menu/Menu';
+import ContentLayoutMembers from "@/layouts/ContentLayoutMembers.astro";
+import FooterRedes from '@/components/footer/FooterRedes.astro';
 interface Props {
   title: string;
+  textColor: string;
 }
 
-const { title } = Astro.props;
+const { title, textColor = "text-black" } = Astro.props;
+
 ---
 
 <!doctype html>
@@ -23,95 +25,11 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <ContentLayout>
-      <slot />
-    </ContentLayout>
+    <Menu client:load color = {textColor}/>
+      <FooterRedes color = {textColor}/>
 
-    <script src="https://kit.fontawesome.com/1a5bcd4a97.js" crossorigin="anonymous" is:inline data-astro-rerun></script>
+      <div class="max-w-7xl mx-auto px-10 md:px-28 lg:max-w-screen-2xl h-screen">
+        <slot />
+      </div>
   </body>
 </html>
-
-<style>
-  body {
-    overflow: hidden;
-    font-family: "Noto Sans Variable", sans-serif;
-    line-height: 1.6;
-    color:var(--negro)
-  }
-
-  .contenedor {
-    height: 100vh;
-    display: flex;
-  }
-
-  .contenedor-contenido {
-    width: 100vw;
-    z-index: 2;
-    display: grid;
-    grid-template-areas:
-      "menu-izquierda contenido-central menu-arriba";
-    
-    justify-content: space-between;
-  }
-
-  .menu-arriba {
-    grid-area: menu-arriba;
-    padding: 40px;
-  }
-
-  .contenido-arriba {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .arriba-enlaces {
-    display: flex;
-    column-gap: 10px;
-    flex-direction: column;
-  }
-
-  .arriba-enlaces a {
-    text-decoration: none;
-    color: var(--negro);
-    font-size: 1em;
-    text-transform: uppercase;
-  }
-
-  .contenido-arriba p {
-    font-size: 2em;
-    font-weight: bold;
-  }
-
-  .menu-izquierda {
-    display: flex;
-    grid-area: menu-izquierda;
-    padding: 40px;
-  }
-
-  .menu-izquierda .contenido-izquierda {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .izquierda-texto p{
-    font-size: 2em;
-    font-weight: bold;
-  }
-
-  .enlaces-izquierda {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 15px;
-  }
-
-  .enlaces-izquierda a {
-    color: var(--negro);
-    font-size: 1em;
-  }
-
-  .menu-izquierda .contenido-izquierda i {
-    font-size: 1.5em;
-  }
-</style>

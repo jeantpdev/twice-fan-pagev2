@@ -152,3 +152,65 @@ const { title } = Astro.props;
     font-size: 1.5em;
   }
 </style>
+
+
+
+<style>
+  body {
+    color: black;
+  }
+
+  .boton-retroceder{
+    margin-left: 60px;
+  }
+  
+  .linea-negra {
+    border-bottom: 3px solid black;
+    width: 300px;
+  }
+
+  .idol {
+    display: flex;
+    width: 1300px;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  img {
+    height: 700px;
+    object-fit: cover;
+    max-width: 400px;
+    mask-image: linear-gradient(black 80%, transparent);
+  }
+
+  .central {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .contenido-central {
+    display: flex;
+    width: 80vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .central .contenido-central h1 {
+    font-size: 4em;
+    color: var(--negro);
+  }
+
+  .idol-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+  }
+
+  .idol-info p{
+    font-size: 2em;
+    font-weight: 500;
+  }
+  
+</style>
